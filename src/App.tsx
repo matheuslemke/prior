@@ -3,7 +3,7 @@ import './App.css'
 import Area from './components/Area'
 
 const App = () => {
-  let areas = [
+  const areas = [
     { id: '1', title: 'Low effort + High impact', color: 'bg-green-400' },
     { id: '2', title: 'High effort + High impact', color: 'bg-green-200' },
     { id: '3', title: 'Low effort + Low impact', color: 'bg-lime-200' },
@@ -11,9 +11,9 @@ const App = () => {
   ]
 
   return (
-    <div className="App grid grid-cols-2">
+    <div className="App grid grid-cols-2 gap-3 bg-neutral-800">
       {areas.map((area) => (
-        <Area key={area.id} title={area.title} bgColor={area.color}></Area>
+        <Area key={area.id} title={area.title} bgColor={area.color} />
       ))}
     </div>
   )
