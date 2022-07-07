@@ -6,7 +6,7 @@ type AreaProps = {
 const Area = ({ title, bgColor }: AreaProps) => {
   return (
     <div className={`h-[50vh] flex items-center justify-center font-sans ${bgColor}`}>
-      <div>{title}</div>
+      <div className="w-40 text-2xl">{title}</div>
     </div>
   )
 }
