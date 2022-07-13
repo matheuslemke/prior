@@ -7,7 +7,12 @@ const Card = ({ content, position }: CardProps) => {
     top: `${position.top}px`,
     left: `${position.left}px`
   }
-  return <div style={style}>{content}</div>
+  return (
+    <textarea
+      className="w-48 h-24 bg-yellow-200 border-2 shadow-lg border-neutral-600 rounded-xl"
+      style={style}
+    />
+  )
 }
 
 export default Card
