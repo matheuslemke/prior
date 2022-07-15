@@ -2,13 +2,15 @@ import { useState } from 'react'
 import './App.css'
 import Area from './components/Area'
 import Card from './components/Card'
+import { v4 as uuid } from 'uuid'
 
-type Position = {
+export type Position = {
   top: number
   left: number
 }
 
-export type CardProps = {
+type CardProps = {
+  id: string
   content: string
   position: Position
 }
@@ -27,6 +29,7 @@ const App = () => {
     setCards([
       ...cards,
       {
+        id: uuid(),
         content: '',
         position: {
           top: evt.clientY,
@@ -36,6 +39,10 @@ const App = () => {
     ])
   }
 
+  const onRemoveCard = (id: string) => {
+    setCards(cards.filter((card) => card.id !== id))
+  }
+
   return (
     <>
       <div className="App grid grid-cols-2 gap-3 bg-neutral-800">
@@ -43,8 +50,8 @@ const App = () => {
           <Area key={area.id} onClick={onClick} {...area} />
         ))}
       </div>
-      {cards.map((card, index) => (
-        <Card key={index} {...card} />
+      {cards.map((card) => (
+        <Card key={card.id} {...card} closeCard={onRemoveCard} />
       ))}
     </>
   )
