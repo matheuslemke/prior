@@ -1,3 +1,5 @@
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=prior)
+
 # Prior
 
 Prioritize your tasks. Know what is the best thing to do.
